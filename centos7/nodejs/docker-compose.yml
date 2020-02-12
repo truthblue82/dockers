@@ -29,7 +29,7 @@ services:
     links:
       - "mongodb404"
     volumes:
-      - ./:/web
+      - ./:/app
     ports:
       - "88:88"
     depends_on:
