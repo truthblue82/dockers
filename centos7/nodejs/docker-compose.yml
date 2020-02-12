@@ -1,0 +1,36 @@
+version: "2"
+
+services:
+  mongodb404:
+    image: mongo:4.0.4
+    container_name: "mongodb404"
+    #restart: unless-stopped
+    environment:
+      - MONGO_DATA_DIR=/c/mongo/404/data
+      - MONGO_LOG_DIR=/c/mongo/404/logs
+      - MONGO_DATABASE=localOTJB
+    volumes:
+      - ./mongo/404/data:/c/mongo/404/data
+    ports:
+      - 27018:27017
+    #command: mongod --smallfiles --logpath=/Users/yentruong/mongo404/logs
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: web
+    container_name: web
+    restart: always
+    environment:
+      - MONGO_HOSTNAME=mongodb404
+      - MONGO_DB=localOTJB
+      - DB_USERNAME=""
+      - DB_PASSWORD=""
+    links:
+      - "mongodb404"
+    volumes:
+      - ./:/web
+    ports:
+      - "88:88"
+    depends_on:
+      - mongodb404
