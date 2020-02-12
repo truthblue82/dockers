@@ -1,3 +1,8 @@
+# Docker containers information
+
+## OS: centOS6
+## Database: mysql 5.6
+## PHP: v5.6
 
 # Generate cert key
 

@@ -1,4 +1,11 @@
 
+# Docker containers information
+
+## OS: centOS7
+## Database: mongoDB 4.0.4
+## Nodejs: v8.11.4
+Using sails@0.12.4
+
 # How to use
 
 ## Use below command line to build and create docker container in local by `Docker Compose`
