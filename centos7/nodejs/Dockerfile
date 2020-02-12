@@ -29,4 +29,4 @@ RUN npm install
 
 EXPOSE 88
 
-CMD ["node", "app.js"]
+CMD ["node", "/app/app.js"]
