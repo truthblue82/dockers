@@ -4,7 +4,7 @@
 ## OS: centOS7
 ## Database: mongoDB 4.0.4
 ## Nodejs: v8.11.4
-Using sails@0.12.4
+Using sails@0.12.4 framework
 
 # How to use
 
@@ -30,7 +30,7 @@ $ docker run -it --rm --name my-running-app my-app
 Host: localhost
 Port: 27018
 
-Connect to mongodb container
+Connect to `mongodb404` container
 
 ```
 $ docker exec -it [projectName]_mongodb404_1 mongodb
@@ -47,3 +47,9 @@ Connect to web container
 ```
 $> docker exec -it [projectName]_otjb_1 /bin/bash
 ```
+
+## How to connect database from Nodejs app
+
+- Using `mongodb404` for database host in Nodejs code.
+- Using `27017` for database port in Nodejs code.
+- If you can not access Nodejs app from browser, please `set host url of Nodejs app to 0.0.0.0`, and access from the browser will be `http://localhost`

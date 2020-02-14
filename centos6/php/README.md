@@ -52,7 +52,7 @@ $ docker run -it --rm --name my-running-app [projectName]
 Host: localhost
 Port: 27018
 
-Connect to mongodb container
+Connect to `db` container
 
 ```
 $ docker exec -it [projectName]_db_1 mysql db --user=dbuser -p

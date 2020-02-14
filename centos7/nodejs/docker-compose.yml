@@ -6,14 +6,14 @@ services:
     container_name: "mongodb404"
     #restart: unless-stopped
     environment:
-      - MONGO_DATA_DIR=/c/mongo/404/data
-      - MONGO_LOG_DIR=/c/mongo/404/logs
-      - MONGO_DATABASE=localOTJB
+      - MONGO_DATA_DIR=/Users/youraccount/mongo/404/data
+      - MONGO_LOG_DIR=/Users/youraccount/mongo/404/logs
+      - MONGO_DATABASE=db
     volumes:
-      - ./mongo/404/data:/c/mongo/404/data
+      - ./mongo/404/data:/Users/youraccount/mongo/404/data
     ports:
       - 27018:27017
-    #command: mongod --smallfiles --logpath=/Users/yentruong/mongo404/logs
+
   web:
     build:
       context: .
@@ -23,7 +23,7 @@ services:
     restart: always
     environment:
       - MONGO_HOSTNAME=mongodb404
-      - MONGO_DB=localOTJB
+      - MONGO_DB=db
       - DB_USERNAME=""
       - DB_PASSWORD=""
     links:
@@ -31,6 +31,6 @@ services:
     volumes:
       - ./:/app
     ports:
-      - "88:88"
+      - "80:88"
     depends_on:
       - mongodb404
